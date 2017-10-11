@@ -5,6 +5,7 @@ It contains Fullstack Nano Degree projects of database and applications.
 - `tournament`: A PostgreSQL project
 - `sqlalchemy_sample`: A sqlalchemy project
 - `webserver`: BaseHTTPServer project, using sqlalchemy
+- `flask`: Flask framework project
 
 
 ## Setup
