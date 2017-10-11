@@ -16,19 +16,19 @@ Base = declarative_base()
 class Restaurant(Base):
     # table syntax
     # __tablename__ = 'some_table'
-    __tablename__='restaurant'
+    __tablename__='restaurants'
     # columnName = Column(attribute,...)
     name = Column(String(80), nullable=False)
-    restaurant_id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
 
 class MenuItem(Base):
     __tablename__='menu_item'
     name = Column(String(80), nullable=False)
-    menuItem_id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     course = Column(String(250))
     description = Column(String(250))
     price = Column(String(8))
-    restaurant_id = Column(Integer, ForeignKey('restaurant.restaurant_id'))
+    restaurant_id = Column(Integer, ForeignKey('restaurants.id'))
     restauraunt = relationship(Restaurant)
 
 
