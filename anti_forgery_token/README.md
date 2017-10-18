@@ -12,10 +12,10 @@ Anti forgery token test.
 ## Current issue:
 At step 3 in above, token(2) and token(3) are different. Maybe for the strong cache.
 I tried..
-- Chrome Developer Tools > Network > ticked `Disable cache`
-- Chrome Developer Tools > Application > Clear storage > Clear the site data, ticking all shown options 
+- `Chrome Developer Tools` > `Network` > ticked `Disable cache`
+- `Chrome Developer Tools` > `Application` > `Clear storage` > `Clear the site data`, ticking all shown options 
 
-A concerning is that the storage usage section (Chrome Developer Tools > Application > Clear storage) shows the following, although I haven't registered service workers.
+A concerning is that the storage usage section (Chrome Developer Tools > Application > Clear storage) shows the following, although I haven't registered service workers. Can it cause the issue?
 - 9.5KB Cache Storage
 - 1.7KB Service Workers
 - 1.3K IndexedDB
