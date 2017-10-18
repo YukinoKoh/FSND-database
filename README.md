@@ -1,21 +1,29 @@
-It contains Fullstack Nano Degree projects of database and applications.
+It contains Udacity projects of database and applications.
 
 ## File structure
+Each folder has own README.
 - `Vagrantfile`: Configuration file to install vertual machine, The Vagrant VM, which includes PostgreSQL
 - `tournament`: A PostgreSQL project
 - `sqlalchemy_sample`: A sqlalchemy project
 - `webserver`: BaseHTTPServer project, using sqlalchemy
 - `flask`: Flask framework project
+- `oauth`: Sample for Google account login 
 
 
 ## Setup
-1. Power up the VM and log in to the VM.
+1. Power up the VM 
 Run the following in the directory where Vagrantfile locates:
 ```
 vagrant up
+```
+To turn the virtual machine off type `vagrant halt`.
+2. Log in to the VM.
+```
 vagrant ssh
 ```
+To log out, type `exit`
 
+It is important to turn off/log out property especially when you run vagrant in different directories.
 ## Vagrantfile
 port forwarding
 ```

@@ -7,16 +7,16 @@ project with [Flask](http://flask.pocoo.org/)
 - `sample_session.py`: Session objects to updata the database
 - `templates`: html templates folder for flask
 - `static`: static folder which includes js, css, img for flask
-- `Gruntfile.js`: Grunt task file
-- `Gruntfile.yml`: Grunt directory file
+- `Gruntfile.js`: Grunt file to convert SCSS to CSS
+- `Gruntfile.yml`: Same as the above
 - `package-lock.json`: npm package for Grunt usage
-- `package.json`: same as the above
-- `node_modules`: same as the above
+- `package.json`: Same as the above
+- `node_modules`: Same as the above
 
 
 ## Flask
-#### render template html
-Call `render_template('TEMPLATE_NAME.html',params)
+#### Render template html
+Call `render_template`('TEMPLATE_NAME.html',params)
 ```
 render_template('newmenuitem.html', restaurant_id=restaurant_id)
 ```
@@ -27,16 +27,16 @@ render_template('newmenuitem.html', restaurant_id=restaurant_id)
 @app.route('/restaurants/<int:restaurant_id>/')
 @app.route('/restaurants/<int:restaurant_id>/new', methods=['GET', 'POST'])
 ```
-type can be int, string, path 
+Type can be int, string, path 
 
 #### Message flashing
 It records a message at the end of a request and access it next request and only next request. [more about flashing massage](http://flask.pocoo.org/docs/0.12/patterns/flashing/)
  
-use `flash()` to store message in `project.py`
+Use `flash()` to store message in `project.py`
 ```
 flash("The menu item has deleted.")
 ```
-use `get_flashed_messages()` in templates to retrieve the message
+Use `get_flashed_messages()` in templates to retrieve the message
 ```
 {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -55,7 +55,7 @@ url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id)
 url_for('static', filename='style.css')
 ```
 
-#### responding with JSON
+#### Responding with JSON
 1. Add function to send JSON in Base class in `database_setup.py` which returns data for JSON format.
 ```
     @property

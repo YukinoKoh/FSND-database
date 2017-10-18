@@ -1,0 +1,28 @@
+<head>
+</head>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<body>
+  <button onclick="testState()">Click</button>
+  <p>{{ STATE }} </p>
+  <div id='result'></div>
+
+<script>
+function testState() {
+ $.ajax({
+      type: 'POST',
+      url: '/connect-test?state={{STATE}}',
+      processData: false,
+      data: 'test',
+      contentType: 'application/octet-stream; charset=utf-8',
+      success: function(result) {
+        if (result) {
+          $('#result').html('Login Successful!</br>'+ result);
+          
+        } else {
+          $('#result').html('Failed: {{STATE}}');
+        }
+      }
+  });
+}
+</script>
+</body>
