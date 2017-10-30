@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>{{ meta_title }}</title>
+    <meta name="description" content="{{ meta_desc }}">
+    <meta name="twitter:title" content="{{ meta_title }}">
+    <meta name="twitter:description" content="{{ meta_desc }}">
+    <meta name="twitter:image" content="{{ url_for('static', filename='/img/twitter_share.png') }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yukinokoh">
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:site_name" content="{{ meta_title }}">
+    <meta property="og:description" content="{{ meta_desc }}">
+    <meta property="og:image" content="{{ url_for('static', filename='/img/twitter_share.png') }}">
+    <meta property="og:url" content="{{ meta_url }}">
+    <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='/img/favicon_192.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/img/favicon_72.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='/img/favicon_72.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='/img/favicon_72.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='/img/favicon_144.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='/img/favicon_180.png') }}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,,user-scalable=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="canonical" href="{{ meta_url }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  </head>
+  <body>
+  <div class="container-fluid">
+    <div class="row"><div class="col-12">
+      <div class="nav">
+        <div class="nav-box" class='close'>
+          <svg height="50" width="50">
+            <line x1="0" y1="0" x2="50" y2="0" class="nav-line1"/>
+            <line x1="0" y1="25" x2="50" y2="25" class="nav-line2" /> 
+            <line x1="0" y1="50" x2="50" y2="50" class="nav-line3" /> 
+          </svg>
+        </div>
+      </div>
+    </div></div>
+  </div>
+  <div class="container-fluid nav-all close">
+    <div class="row"><div class="col-12">
+    <ul>
+      {% for category in categories %}
+        <li>{{ category.name }}</li>
+      {% endfor %}
+        <li>About</li>
+        <li>Log in to edit</li>
+    </ul>
+    </div></div>
+  </div>
+    {% block content %}
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/nav.js') }}"></script>
+  </body>
+</html>

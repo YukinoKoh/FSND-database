@@ -1,0 +1,234 @@
+$color_exploratory: #FF848A;
+$color_fundamental: #3BCC81;
+$color_generative: #C186ED;
+$color_communicative: #FD3468;
+$color_evaluative: #379FBA;
+$color_applicative: #F98330;
+$color_body: #000000;
+$color_body_sub: #666;
+$font_family: 'Helvetica', sanserif;
+$font_description: 'Georgia', serif;
+$font_size: 14px;
+$font_link_size: 11px;
+
+body{
+  font-family: $font_family;
+  font-size: $font_size;
+  font-weight: 200;
+}
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+a:hover{
+  text-decoration: none;
+}
+.exploratory{ color: $color_exploratory; }
+.fundamental{ color: $color_fundamental; }
+.generative{ color: $color_generative; }
+.communicative { color: $color_communicative; }
+.evaluative { color: $color_evaluative; }
+.applicative { color: $color_applicative; }
+
+.bg-exploratory{ background-color: $color_exploratory;}
+.bg-fundamental{ background-color: $color_fundamental;}
+.bg-generative{ background-color: $color_generative;}
+.bg-communicative{ background-color: $color_communicative;}
+.bg-evaluative{ background-color: $color_evaluative;}
+.bg-applicative{ background-color: $color_applicative;}
+
+.hover-exploratory:hover{ color: $color_exploratory; text-decoration:none;}
+.hover-fundamental:hover{ color: $color_fundamental; text-decoration:none;}
+.hover-generative:hover{ color: $color_generative; text-decoration:none;} 
+.hover-communicative:hover{ color: $color_communicative; text-decoration:none;}
+.hover-evaluative:hover{ color: $color_evaluative; text-decoration:none;}
+.hover-applicative:hover{ color: $color_applicative; text-decoration:none;}
+
+.hb-exploratory:hover{ background-color: $color_exploratory; color: #fff;}
+.hb-fundamental:hover{ background-color: $color_fundamental; color: #fff;}
+.hb-generative:hover{ background-color: $color_generative; color: #fff;}
+.hb-communicative:hover{ background-color: $color_communicative; color: #fff;}
+.hb-evaluative:hover{ background-color: $color_evaluative; color: #fff;}
+.hb-applicative:hover{ background-color: $color_applicative; color: #fff;}
+
+.b-exploratory{ border: 1px solid $color_exploratory; }
+.b-fundamental{ border: 1px solid $color_fundamental; }
+.b-generative{ border: 1px solid $color_generative; }
+.b-communicative{ border: 1px solid $color_communicative; }
+.b-evaluative{ border: 1px solid $color_evaluative; }
+.b-applicative{ border: 1px solid $color_applicative; }
+
+.bb-exploratory{ border-bottom: 1px solid $color_exploratory; }
+.bb-fundamental{ border-bottom: 1px solid $color_fundamental; }
+.bb-generative{ border-bottom: 1px solid $color_generative; }
+.bb-communicative{ border-bottom: 1px solid $color_communicative; }
+.bb-evaluative{ border-bottom: 1px solid $color_evaluative; }
+.bb-applicative{ border-bottom: 1px solid $color_applicative; }
+
+@media screen and (min-width: 992px){
+  .col-card {
+    width: calc(100% / 3) ;
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 576px){
+  .col-card {
+    width: 50%;
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 575px){
+  .col-card{
+    width: calc(100vw - 40px);
+  }
+  .hidden-sm{
+    display: none;
+  }
+}
+
+h1.main {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: 60px;
+}
+h2.main{
+  margin-bottom: 50px;
+  font-weight: 100;
+  font-size: $font_size;
+}
+h2.main a{
+  color: $color_body;
+  text-decoration: underline;
+}
+.nav{
+  float: right;
+}
+.nav-box{
+  margin: 16px;
+  z-index: 101;
+}
+@keyframes nav-line1{
+  from {
+    -ms-transform: rotate(0deg) translate(0px, 0px); /* IE 9 */
+    -webkit-transform: rotate(0deg) translate(0px, 0px); /* Safari */  
+    transform: rotate(0deg) translate(0px, 0px);
+    stroke: rgb(0,0,0);
+    stroke-width: 2px;
+  }
+  to {
+    -ms-transform: rotate(45deg) translate(10px, -2px); /* IE 9 */
+    -webkit-transform: rotate(45deg) translate(10px, -2px); /* Safari */  
+    transform: rotate(45deg) translate(10px, -2px);
+    stroke: rgb(0,0,0);
+    stroke-width: 2px;
+  }
+}
+@keyframes nav-line2{
+  from{
+    visibility: block;  
+  }
+  to{
+    visibility: hidden;
+  }
+}
+@keyframes nav-line3{
+  from {
+    -ms-transform: rotate(0deg) translate(0px, 0px); /* IE 9 */
+    -webkit-transform: rotate(0deg) translate(0px, 0px); /* Safari */  
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  to {
+    -ms-transform: rotate(-45deg) translate(-24px, -16px); /* IE 9 */
+    -webkit-transform: rotate(-45deg) translate(-24px, -16px); /* Safari */  
+    transform: rotate(-45deg) translate(-24px, -16px);
+  }
+}
+.nav-line1, .nav-line2, .nav-line3{
+  stroke: rgb(0,0,0);
+  stroke-width: 2px;
+}
+.nav-line1.open{
+  animation-name: nav-line1;
+  animation-duration: 1s;
+   -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+   -moz-animation-fill-mode:forwards; /*FF 5+*/
+   -o-animation-fill-mode:forwards; /*Not implemented yet*/
+   -ms-animation-fill-mode:forwards; /*IE 10+*/
+   animation-fill-mode:forwards; /*when the spec is finished*/
+}
+.nav-line2.open{
+  animation-name: nav-line2;
+  animation-duration: 0.5s;
+   -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+   -moz-animation-fill-mode:forwards; /*FF 5+*/
+   -o-animation-fill-mode:forwards; /*Not implemented yet*/
+   -ms-animation-fill-mode:forwards; /*IE 10+*/
+   animation-fill-mode:forwards; /*when the spec is finished*/
+}
+.nav-line3.open{
+  animation-name: nav-line3;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+  animation-fill-mode:forwards; /*when the spec is finished*/
+}
+.nav-all{
+  z-index: 100;
+}
+.nav-all.close{
+  display: none;
+}
+.nav-all.open{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+.card-shape{
+  margin: 8px 4px;
+  height: 200px;
+  background-color: '#ffffff';
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 4px 4px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 2px 4px 4px 0px rgba(0,0,0,0.3);
+  box-shadow: 2px 4px 4px 0px rgba(0,0,0,0.3);
+}
+.card-title{
+  font-size: 28px;
+  font-weight: 600;
+  width: 100%;
+  padding: 28px 8px;
+}
+
+.tool-title{
+  font-weight: 400;
+  font-size: $font_size;
+}
+.tool-list{
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+  font-size: $font_size;
+}
+.tool-name{
+  font-weight: 600;
+}
+.tool-desc{
+  font-weight: 200;
+  color: $color_body_sub;
+  font-family: $font_description;
+}
+.link-list, .link-list a{
+  color: $color_body_sub;
+  font-family: $font_description;
+}
+
