@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="852189826736-o3g5bq8lmasn9i914ao1nqn1ppdlqf9g.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+      {% block content %}
+      {% endblock %}
+  </body>
+</html>

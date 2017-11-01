@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Hello {{ userName }}</h1>
+<div>
+  <a href="#" onclick="signOut();">Sign out from {{ provider }}</a>
+</div>
+
+<h2>Session info</h2>
+<ul>
+  <li>Name: {{ userName  }}</li>
+  <li>DBid: {{ userId }}</li>
+  <li>{{ provider }} id: {{providerId }}</li>
+  <li>email: {{ email }} </li>
+  <li>provider: {{ provider }} </li>
+  <li>token: {{ accessToken }}</li>
+</ul>
+
+<script>
+  function onLoad() {
+    gapi.load('auth2', function() {
+      gapi.auth2.init();
+    });
+  }
+  function signOut() {
+    if ('{{ provider }}' == 'google') {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out from google.');
+      });
+    }
+    window.location.href = "/signout";
+  }
+</script>
+
+{% endblock %}
