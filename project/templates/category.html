@@ -6,33 +6,28 @@
       <h2 class="main">
         {{ category.description }}
       </h2>
+      {% if log =='True' %}
+        <a href="/{{ category.name.lower() }}/new"><div class="btn-action btn-plus bg-{{ category.name.lower() }}">+</div></a>
+      {% endif %}
     </div></div>
   </div>
 
   <div class="container">
-    <div class="row tool-title {{ category.name.lower() }} bb-{{ category.name.lower() }}">
-      <div class="col-sm-3">Tool name</div>
-      <div class="col-sm-5 hidden-sm">Description</div>
-      <div class="col-sm-4 hidden-sm">Link</div>
+    <div class="row option-title {{ category.name.lower() }} bb-{{ category.name.lower() }}">
+      <div class="col-sm-4">Option</div>
+      <div class="col-sm-8 hidden-sm">Description</div>
     </div>
-  {% for i in tools %}
-    <div class="row tool-list">
-      <div class="col-sm-3 tool-name">
-        {{ i.name }}
+    {% for i in options %}
+      <div class="row option-list">
+        <div class="col-sm-4 option-name">
+          <a href="/{{ category.name.lower() }}/{{ i.id }}">
+            {{ i.name }}
+          </a>
+        </div>
+        <div class="col-sm-8 option-desc hidden-sm">
+          {{ i.description }}
+        </div>
       </div>
-      <div class="col-sm-5 tool-desc hidden-sm">
-        {{ i.description }}
-      </div>
-      <div class="col-sm-4">
-         <ul> 
-           {% for q in links %}
-             {% if q.tool_id == i.id %}
-               <li class="link-list hover-{{category.name.lower() }}"><a href="{{ q.url }}">{{ q.title }}</a></li>
-             {% endif %}
-           {% endfor %}
-        </ul>
-      </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
   </div>
 {% endblock %}
