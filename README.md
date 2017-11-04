@@ -8,6 +8,7 @@ Each folder has own README.
 - `webserver`: BaseHTTPServer project, using sqlalchemy
 - `flask`: Flask framework project
 - `oauth`: Sample for Google account login 
+- `project`: unit3 final project 
 
 
 ## Setup
@@ -24,8 +25,10 @@ vagrant ssh
 To log out, type `exit`
 
 It is important to turn off/log out property especially when you run vagrant in different directories.
-## Vagrantfile
-port forwarding
+
+
+## Port handling
+`Vagrantfile` handles Vagrant installation and port forwarding as the following:
 ```
 Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8000, host_ip: "127.0.0.1"
@@ -34,4 +37,10 @@ Vagrant.configure("2") do |config|
   ...
 end
 ```
-And it handles vagrant installation.
+Other useful command around port:
+- To see what vagrant instances are running: `vagrant global-status`
+- To see which application is holding ports: `lsof -i | grep LISTEN`
+
+## License
+[MIT License](https://choosealicense.com/licenses/mit/) © [Yukino Kohmoto](http://yukinokoh.github.io/)
+
